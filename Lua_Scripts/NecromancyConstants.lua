@@ -1,7 +1,7 @@
 local constants = {}
 
 constants.rituals_data = {{
-    name = "Makeshift communion",
+    name = "Makeshift communion (tutorial)",
     dbrowId = 7591,
     requiredDurability = 1,
     lightSourcesAmount = 4,
@@ -147,7 +147,7 @@ constants.rituals_data = {{
     souls = {},
     EctoplasmRewardAmount = 3
 }, {
-    name = "Lesser ensoul material",
+    name = "Lesser ensoul material (Tutorial)",
     dbrowId = 7584,
     requiredDurability = 1,
     lightSourcesAmount = 4,

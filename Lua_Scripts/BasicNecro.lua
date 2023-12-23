@@ -1315,7 +1315,7 @@ local function initAlternations()
         local isUsingOverload = false
         local regularBoost = getBuffBarValue(30125)
         if (regularBoost > 0) then
-            boostedLevel = necromancyLevel + regularBoost
+            boostedLevel = necromancyLevel + regularBoost - 1
         end
         if (boostedLevel == -1) then
             for i = 1, #constants.active_overloads do
@@ -1507,7 +1507,7 @@ local function checkNeedsRepair()
     local isUsingOverload = false
     local regularBoost = getBuffBarValue(30125)
     if (regularBoost > 0) then
-        boostedLevel = necromancyLevel + regularBoost
+        boostedLevel = necromancyLevel + regularBoost - 1
     end
     if (boostedLevel == -1) then
         for i = 1, #constants.active_overloads do

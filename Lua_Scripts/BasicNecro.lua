@@ -1534,11 +1534,11 @@ local function checkNeedsRepair()
                 end
             end
             if (hasAll) then
-                if (boostedLevel ~= -1 and alternationNPCS[i].alternation.requiredLevel > boostedLevel and
-                    not isUsingOverload) then
+                if (necromancyLevel >= alternationNPCS[i].alternation.requiredLevel or (boostedLevel ~= -1 and boostedLevel >= alternationNPCS[i].alternation.requiredLevel)) then
+                    canRepairAnyAlternation = true
                     goto continue
                 end
-                if (alternationNPCS[i].alternation.requiredLevel > necromancyLevel and boostedLevel == -1) then
+                if (necromancyLevel < alternationNPCS[i].alternation.requiredLevel and (boostedLevel == -1 or (boostedLevel < alternationNPCS[i].alternation.requiredLevel))) then
                     for j = 1, #constants.necromancyBoosts do
                         local checkLevel = necromancyLevel + math.floor(
                             constants.necromancyBoosts[j].minBoost +
@@ -1560,7 +1560,6 @@ local function checkNeedsRepair()
                     end
                 end
                 canRepairAnyAlternation = true
-                break
             end
             ::continue::
         end

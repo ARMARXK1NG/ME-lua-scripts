@@ -905,7 +905,7 @@ local function clearSpot(npcId)
     if (not isScriptActive()) then
         return true
     end
-    API.DoAction_NPC(0x29, 3520, {npcId}, 50) -- update 3520 to clear option
+    API.DoAction_NPC(0x29, 1888, {npcId}, 50) -- update 1888 to clear option
     API.RandomSleep2(600, 600, 600)
     API.WaitUntilMovingEnds()
     API.RandomSleep2(650, 650, 750)
@@ -1796,7 +1796,7 @@ local function handleDistractions()
                             if (shamblingGlyph ~= nil) then
                                 if (constants.isDepleted(getActualNPCId(shamblingGlyph.Id)) or
                                     string.find(string.lower(shamblingGlyph.Name), string.lower("depleted"))) then
-                                    API.DoAction_NPC(0xae, 3328, {shamblingGlyph.Id}, 50)
+                                    API.DoAction_NPC(0xae, 1696, {shamblingGlyph.Id}, 50)
                                 else
                                     API.DoAction_NPC(0x29, API.OFF_ACT_InteractNPC_route, {shamblingGlyph.Id}, 50)
                                 end
@@ -1809,7 +1809,7 @@ local function handleDistractions()
                             API.WaitUntilMovingEnds()
                             if (constants.isDepleted(getActualNPCId(shamblingGlyph.Id)) or
                                 string.find(string.lower(shamblingGlyph.Name), string.lower("depleted"))) then
-                                API.DoAction_NPC(0xae, 3328, {shamblingGlyph.Id}, 50)
+                                API.DoAction_NPC(0xae, 1696, {shamblingGlyph.Id}, 50)
                             else
                                 API.DoAction_NPC(0x29, API.OFF_ACT_InteractNPC_route, {shamblingGlyph.Id}, 50)
                             end
